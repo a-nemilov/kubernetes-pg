@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-ingress
+  labels:
+    name: my-ingress
+spec:
+  rules:
+    - host: my-app.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+                serviceName: my-app
+                servicePort: 80
